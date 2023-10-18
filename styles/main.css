@@ -1,0 +1,89 @@
+html {
+    font-family: Inter;
+    font-size: 16px;
+  }
+
+  body {
+    font-weight: 400;
+    font-style:normal;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.15;
+    color: var(--dl-color-gray-black);
+    background-color: var(--dl-color-gray-white);
+
+  }
+
+  .navigation-links1-nav {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .navigation-links1-text {
+    font-family: "Noto Sans";
+  }
+  .navigation-links1-text1 {
+    font-family: "Noto Sans";
+    margin-left: var(--dl-space-space-twounits);
+  }
+  .navigation-links1-text2 {
+    font-family: "Noto Sans";
+    margin-left: var(--dl-space-space-twounits);
+  }
+  
+  @media(max-width: 767px) {
+    .navigation-links1-nav {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .navigation-links1-text {
+      margin-bottom: var(--dl-space-space-unit);
+    }
+    .navigation-links1-text1 {
+      margin-left: 0;
+      margin-bottom: var(--dl-space-space-unit);
+    }
+    .navigation-links1-text2 {
+      margin-left: 0;
+      margin-bottom: var(--dl-space-space-unit);
+    }
+  }
+  
+  .nav-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+  .nav-header {
+    width: 100%;
+    display: flex;
+    max-width: var(--dl-size-size-maxwidth);
+    align-items: center;
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-threeunits);
+    padding-right: var(--dl-space-space-threeunits);
+    padding-bottom: var(--dl-space-space-twounits);
+    justify-content: space-between;
+  }
+  .nav-navlink {
+    display: contents;
+  }
+  .nav-image {
+    width: 200px;
+    object-fit: cover;
+    text-decoration: none;
+  }
+  .nav-nav {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .nav-navlink1 {
+    display: contents;
+  }

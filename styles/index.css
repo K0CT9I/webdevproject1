@@ -1,0 +1,42 @@
+
+.home-main {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  min-height: 80vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.home-banner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.home-text {
+  font-size: 3rem;
+  font-family: "Noto Sans";
+}
+.home-text1 {
+  margin-top: var(--dl-space-space-twounits);
+  text-align: center;
+  font-family: "Noto Sans";
+  padding-left: var(--dl-space-space-threeunits);
+  margin-bottom: var(--dl-space-space-twounits);
+  padding-right: var(--dl-space-space-threeunits);
+}
+.home-navlink2 {
+  transition: 0.3s;
+  padding-top: var(--dl-space-space-unit);
+  padding-left: var(--dl-space-space-twounits);
+  padding-right: var(--dl-space-space-twounits);
+  padding-bottom: var(--dl-space-space-unit);
+  text-decoration: none;
+}
+.home-navlink2:hover {
+  transform: scale(1.02);
+}
+.home-image2 {
+  width: 45rem;
+  margin-top: var(--dl-space-space-twounits);
+}
