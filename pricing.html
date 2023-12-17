@@ -34,9 +34,9 @@
           <div class="nav-nav">
             <a href="about.html" class="nav-navlink1">
               <nav class="navigation-links1-nav navigation-links1-root-class-name17">
-                <a class="navigation-links1-text" href="/about.html">О нас</a>
-                <a class="navigation-links1-text1" href="/pricing.html">Стоимость</a>
-                <a class="navigation-links1-text2" href="/index.html">Условия</a>
+                <a class="navigation-links1-text" href="about.html">О нас</a>
+                <a class="navigation-links1-text1" href="pricing.html">Стоимость</a>
+                <a class="navigation-links1-text2" href="index.html">Условия</a>
               </nav>
             </a>
           </div>
@@ -45,7 +45,7 @@
           <div class="pricing-card">
             <div class="pricing-container2">
               <span class="pricing-level-text">Start</span>
-              <span class="pricing-price-text">$5</span>
+              <span class="pricing-price-text" id="startCard"></span>
               <span class="pricing-per-text">В месяц</span>
             </div>
             <span class="pricing-level-desc">
@@ -60,7 +60,7 @@
           <div class="pricing-card1">
             <div class="pricing-container2">
               <span class="pricing-level-text">basic</span>
-              <span class="pricing-price-text">$9</span>
+              <span class="pricing-price-text" id="basicCard"></span>
               <span class="pricing-per-text">В месяц</span>
             </div>
             <span class="pricing-level-desc">
@@ -77,7 +77,7 @@
           <div class="pricing-card2">
             <div class="pricing-container2">
               <span class="pricing-level-text">Pro</span>
-              <span class="pricing-price-text">$15</span>
+              <span class="pricing-price-text" id="proCard"></span>
               <span class="pricing-per-text">В месяц</span>
             </div>
             <span class="pricing-level-desc">
@@ -91,6 +91,21 @@
               <span></span>
             </span>
             <button class="pricing-button button">Подписаться</button>
+            <script>
+              fetch('https://d5dd0g2vtgckehss7ll6.apigw.yandexcloud.net/price')
+                  .then(response => response.json())
+                  .then(data => {
+                      var basicCardElement = document.getElementById('basicCard');
+                      var proCardElement = document.getElementById('proCard');
+                      var startCardElement = document.getElementById('startCard');
+                      var basicPrice = data.find(item => item.level === 'BASIC').price;
+                      var proPrice = data.find(item => item.level === 'PRO').price;
+                      var startPrice = data.find(item => item.level === 'START').price;
+                      basicCardElement.innerText = '$' + basicPrice;
+                      proCardElement.innerText = '$' + proPrice;
+                      startCardElement.innerText = '$' + startPrice;
+                  })
+          </script>
           </div>
         </div>
       </div>

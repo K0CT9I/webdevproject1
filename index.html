@@ -34,9 +34,9 @@
           <div class="nav-nav">
             <a href="about.html" class="nav-navlink1">
               <nav class="navigation-links1-nav navigation-links1-root-class-name17">
-                <a class="navigation-links1-text" href="/about.html">О нас</a>
-                <a class="navigation-links1-text1" href="/pricing.html">Стоимость</a>
-                <a class="navigation-links1-text2" href="/index.html">Условия</a>
+                <a class="navigation-links1-text" href="about.html">О нас</a>
+                <a class="navigation-links1-text1" href="pricing.html">Стоимость</a>
+                <a class="navigation-links1-text2" href="index.html">Условия</a> 
               </nav>
             </a>
           </div>
@@ -53,7 +53,12 @@
                 вам упростить свою жизнь. Начните принимать умные шаги к
                 минимализму, подписавшись сейчас.
               </span>
-              <span></span>
+              <br />
+              <br />
+              <span>Как насчёт глубокой цитаты? Да вот же она:</span>
+              <br />
+              <br />
+              <span id = "apiResult"></span>
               <span></span>
             </span>
             <a href="pricing.html" class="home-navlink2 button">Подробнее</a>
@@ -64,6 +69,17 @@
             class="home-image2"
           />
         </div>
+        <script>
+          fetch('https://d5dd0g2vtgckehss7ll6.apigw.yandexcloud.net/quote')
+              .then(response => response.text())
+              .then(data => {
+                  const apiResult = data.trim();
+                  const element = document.getElementById('apiResult');
+                  if (element) {
+                      element.textContent = `"${apiResult}"`;
+                  }
+              })
+          </script>
       </div>
     </div>
   </body>

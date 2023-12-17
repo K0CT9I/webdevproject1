@@ -35,9 +35,9 @@
           <div class="nav-nav">
             <a href="about.html" class="nav-navlink1">
               <nav class="navigation-links1-nav navigation-links1-root-class-name17">
-                <a class="navigation-links1-text" href="/about.html">О нас</a>
-                <a class="navigation-links1-text1" href="/pricing.html">Стоимость</a>
-                <a class="navigation-links1-text2" href="/index.html">Условия</a>
+                <a class="navigation-links1-text" href="about.html">О нас</a>
+                <a class="navigation-links1-text1" href="pricing.html">Стоимость</a>
+                <a class="navigation-links1-text2" href="index.html">Условия</a>
               </nav>
             </a>
           </div>
@@ -93,11 +93,11 @@
         </div>
         <div class="about-stats">
           <div class="about-stat">
-            <h1 class="about-stat-number">1034</h1>
+            <h1 class="about-stat-number" id="apiResult"></h1>
             <span class="about-stat-label">Минималиста с нами</span>
           </div>
           <div class="about-stat">
-            <h1 class="about-stat-number">151</h1>
+            <h1 class="about-stat-number">1</h1>
             <span class="about-stat-label">Выпущенная рассылка</span>
           </div>
           <div class="about-stat">
@@ -109,6 +109,17 @@
             <span class="about-stat-label">Рассылка в неделю</span>
           </div>
         </div>
+        <script>
+          fetch('https://d5dd0g2vtgckehss7ll6.apigw.yandexcloud.net/usercount')
+              .then(response => response.text())
+              .then(data => {
+                  const apiResult = parseInt(data);
+                  const element = document.getElementById('apiResult');
+                  if (element) {
+                      element.textContent = apiResult;
+                  }
+              })
+          </script>
       </div>
     </div>
   </body>
